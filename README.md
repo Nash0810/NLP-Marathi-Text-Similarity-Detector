@@ -61,10 +61,6 @@ marathi-similarity-detector/
 
 If you'd like to contribute, feel free to fork the repository and submit a pull request with your changes.
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Contact
 
 For any queries, contact nashco9900\@gmail.com or open an issue in the repository.
