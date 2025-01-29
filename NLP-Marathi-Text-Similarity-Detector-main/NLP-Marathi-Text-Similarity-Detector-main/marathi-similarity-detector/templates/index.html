@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathi Text Similarity Detector</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Marathi Text Similarity Detector</h1>
+            <p>Enter two Marathi texts to calculate the similarity between them.</p>
+            
+            <form id="similarity-form">
+                <div class="form-group">
+                    <label for="text1">Text 1 (Marathi):</label>
+                    <textarea id="text1" rows="4" placeholder="Enter first Marathi sentence..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="text2">Text 2 (Marathi):</label>
+                    <textarea id="text2" rows="4" placeholder="Enter second Marathi sentence..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Calculate Similarity</button>
+            </form>
+            
+            <div id="result-container">
+                <h3>Similarity Score:</h3>
+                <div id="similarity-result">-</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('similarity-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const text1 = document.getElementById('text1').value;
+            const text2 = document.getElementById('text2').value;
+
+            const response = await fetch('/similarity', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text1, text2 })
+            });
+
+            const result = await response.json();
+            document.getElementById('similarity-result').textContent = result.similarity;
+        });
+    </script>
+</body>
+</html>
