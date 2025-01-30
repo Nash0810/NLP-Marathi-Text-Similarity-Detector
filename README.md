@@ -16,7 +16,7 @@ This project is a Marathi Text Similarity Detector that analyzes the similarity 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/NLP-Marathi-Text-Similarity-Detector.git
+   https://github.com/Nash0810/NLP-Marathi-Text-Similarity-Detector.git
    cd NLP-Marathi-Text-Similarity-Detector/marathi-similarity-detector
    ```
 
